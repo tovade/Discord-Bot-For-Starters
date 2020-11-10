@@ -41,7 +41,8 @@ module.exports = {
     .setThumbnail(target.avatarURL)
     .setFooter(`Banned by ${message.author.tag}`);
     
-    message.channel.send(embed)
+    const channel = "767108483253403713"
+    client.channels.cache.get(channel).send(embed)
     target.ban(args[1])
     
     

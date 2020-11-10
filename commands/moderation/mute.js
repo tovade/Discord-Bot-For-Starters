@@ -57,7 +57,13 @@ await message.channel.send(`You muted **${message.mentions.users.first().usernam
     
     user.send(`You are muted in **${message.guild.name}** For \`${reason}\``)
     
-    
+    const channel = "767108483253403713"
+    const embed = new MessageEmbed()
+    .setTitle('USER MUTED')
+    .addField('Moderator', `${message.author.username}`)
+    .addField('Reason', reason)
+    .addField('User', message.mentions.users.first().username)
+    client.channels.cache.get(channel).send(embed)
 //WE ARE DONE HERE 
     
   }

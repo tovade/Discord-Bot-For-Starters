@@ -33,14 +33,15 @@ module.exports = {
 
     let data = await canva.rankcard(
       {
-        gradiant: "coldsky",
         name: user.username,
         discriminator: user.discriminator,
         level: level,
         rank: "0",
         currentXP: remxp,
         fullXP: levelxp,
-        avatar: user.displayAvatarURL({ format: "png" })
+        avatar: user.displayAvatarURL({ format: "png" }),
+        link: "https://cdn.discordapp.com/attachments/767108481597571085/772384413341188096/image0.png",
+        
 
       })
 

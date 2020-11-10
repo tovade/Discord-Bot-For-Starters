@@ -18,9 +18,9 @@ module.exports = {
       return message.channel.send("Please Mention the person to who you want to warn - warn @mention <reaosn>")
     }
     
-    if(message.mentions.users.first().bot) {
+    /**if(message.mentions.users.first().bot) {
       return message.channel.send("You can not warn bots")
-    }
+    }*/
     
     if(message.author.id === user.id) {
       return message.channel.send("You can not warn yourself")
@@ -51,6 +51,13 @@ module.exports = {
        user.send(`You have been warned in **${message.guild.name}** for ${reason}`)
       await message.channel.send(`You warned **${message.mentions.users.first().username}** for ${reason}`)
     }
+    const channel = "767108483253403713"
+    const embed = new MessageEmbed()
+    .setTitle('USER WARNED')
+    .addField('Moderator', `${message.author.username}`)
+    .addField('Reason', reason)
+    .addField('User', message.mentions.users.first().username)
+    client.channels.cache.get(channel).send(embed) 
     
   
   } 

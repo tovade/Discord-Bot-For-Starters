@@ -35,7 +35,8 @@ module.exports = {
     .setColor("#ff2050")
     .setFooter(`Banned by ${message.author.username}`);
     
-    message.channel.send(embed)
+    const channel = "767108483253403713"
+    client.channels.cache.get(channel).send(embed)
     
     target.kick(args[1]);
     

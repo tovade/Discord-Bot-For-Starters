@@ -14,11 +14,13 @@
     "ascii-table": "^0.0.9",
     "canvas-senpai": "^0.1.6",
     "common-tags": "^1.8.0",
+    "dateformat": "^3.0.3",
     "discord.js": "^12.1.1",
     "moment": "^2.27.0",
     "node-fetch": "^2.6.0",
     "quick.db": "^7.1.1",
     "something-random-on-discord": "^0.0.1",
+    "util": "^0.12.3",
     "weather-js": "^2.0.0"
   },
   "engines": {

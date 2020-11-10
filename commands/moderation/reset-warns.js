@@ -1,15 +1,16 @@
 const db = require("quick.db")
-
+const { MessageEmbed } = require("discord.js")
 module.exports = {
   name: "resetwarns",
   aliases: ["rwarns"],
   usage: "rwarns <@user>",
+  category: "moderation",
   description: "Reset warnings of mentioned person",
   run: async (client, message, args) => {
     
     
     if(!message.member.hasPermission("ADMINISTRATOR")) {
-      return message.channel.send("Yopu should have admin perms to use this command")
+      return message.channel.send("You should have admin perms to use this command")
     }
     
     const user = message.mentions.members.first()
@@ -35,7 +36,12 @@ module.exports = {
     db.delete(`warnings_${message.guild.id}_${user.id}`)
     user.send(`Your all warnings are reseted by ${message.author.username} from ${message.guild.name}`)
     await message.channel.send(`Reseted all warnings of ${message.mentions.users.first().username}`)
-    
+    const channel = "767108483253403713"
+    const embed = new MessageEmbed()
+    .setTitle('USER WARNS RESET')
+    .addField('Moderator', `${message.author.username}`)
+    .addField('User', message.mentions.users.first().username)
+    client.channels.cache.get(channel).send(embed)
   
     
 }

@@ -15,7 +15,7 @@ module.exports = {
     
     
     message.channel.send(`${user} have **${warnings}** warning(s)`)
-  
+    
   
   }
 }

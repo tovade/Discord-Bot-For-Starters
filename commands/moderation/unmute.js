@@ -1,3 +1,4 @@
+const { MessageEmbed } = require("discord.js")
 module.exports = {
   name: "unmute",
   category: "moderation",
@@ -33,6 +34,13 @@ module.exports = {
     await message.channel.send(`**${message.mentions.users.first().username}** is unmuted`)
     
     user.send(`You are now unmuted from **${message.guild.name}**`)
+    const channel = "767108483253403713"
+    const embed = new MessageEmbed()
+    .setTitle('USER UNMUTED')
+    .addField('Moderator', `${message.author.username}`)
+    .addField('Reason', reason)
+    .addField('User', message.mentions.users.first().username)
+    client.channels.cache.get(channel).send(embed)
 
   }
 };
