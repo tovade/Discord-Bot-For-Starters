@@ -3,7 +3,10 @@ const { addexp } = require("../handlers/xp.js");
 const { ownerID, default_prefix } = require("../config.json");
 const { badwords } = require("../data.json") 
 let cooldown = {}
-
+const queue2 = new Map();
+const queue3 = new Map();
+const queue = new Map();
+const games = new Map()
 module.exports.run = async (client, message) => {
   if (message.author.bot) return;
   if (!message.guild) return;
@@ -106,8 +109,13 @@ module.exports.run = async (client, message) => {
   //NOW LETS TEST
 
   //-----------------------------------------------------------------------------------------------------------------
-
-  if (command) command.run(client, message, args);
+  let ops = {
+    queue: queue,
+    queue2: queue2,
+    queue3: queue3,
+    games: games
+}
+  if (command) command.run(client, message, args, ops);
  
 
 
